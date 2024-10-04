@@ -30,3 +30,41 @@ function locomotive(){
 }
 locomotive();
 
+function page3Elements(){
+  let page3InnerElement = document.querySelectorAll(".page3-inner");
+
+  page3InnerElement.forEach( (dets) => {
+    dets.addEventListener("mouseenter", () => {
+      dets.childNodes[5].style.opacity = 1;
+      dets.childNodes[3].style.bottom = "30%";
+    })
+    dets.addEventListener("mouseleave", () => {
+      dets.childNodes[5].style.opacity = 0;
+      dets.childNodes[3].style.bottom = "10%";
+    })
+  })
+}
+page3Elements();
+
+function fontChange(){
+  let page2Text = document.querySelector(".page2 h1");
+
+
+  let carrer = ["Editing", "FilmMaking", "StoryTelling", "Cinematography"];
+
+  let carrerIndex = 0;
+
+  function updateText(){
+    page2Text.innerText = ` ${carrer[carrerIndex]} `;
+    carrerIndex++;
+
+    if (carrer.length == carrerIndex) {
+      carrerIndex = 0;
+    }
+  
+    setTimeout(updateText,1500);
+  }
+  updateText();
+}
+fontChange();
+
