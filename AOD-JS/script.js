@@ -67,3 +67,33 @@ function fontChange(){
   updateText();
 }
 fontChange();
+
+function navbar(){
+  const navBar = document.querySelector(".full-div");
+  const menu = document.querySelector(".nav-part-3 button");
+  const page1Element = document.querySelector(".page1");
+  let flag = 0;
+  
+  menu.addEventListener("click", () => {
+    if (flag === 0) {
+      navBar.style.top = "-150%";
+      navBar.style.opacity = 0;
+      menu.textContent = "Menu";
+      menu.style.color = "#FFFFFF";
+      menu.style.backgroundColor = "transparent";
+      menu.style.border = "0.5px solid rgb(161, 161, 161)";
+      menu.style.borderRadius = "20px";
+      navBar.style.display = "block";
+      flag = 1;
+    }
+    else{
+      navBar.style.top = "0%";
+      navBar.style.opacity = 1;
+      menu.textContent = "close";
+      menu.style.backgroundColor = "#FFFFFF";
+      menu.style.color = "#000000"
+      flag = 0;
+    }
+  })
+}
+navbar();
